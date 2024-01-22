@@ -2,7 +2,7 @@ package algorithm
 
 import java.util.*
 
-class TopologySort(private val n: Int) {
+class TopologySort(n: Int) {
     private val graph: MutableList<MutableList<Int>> = MutableList(n + 1) { mutableListOf() }
     private val inDegree = MutableList(n + 1) { 0 }
     private val result = mutableListOf<Int>()

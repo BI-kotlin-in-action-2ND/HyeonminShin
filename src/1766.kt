@@ -4,7 +4,7 @@ import java.util.PriorityQueue
  * https://www.acmicpc.net/problem/1766
  */
 
-class TopologySort(private val n: Int) {
+class TopologySort(n: Int) {
     private val graph: MutableList<MutableList<Int>> = MutableList(n + 1) { mutableListOf() }
     private val inDegree = MutableList(n + 1) { 0 }
     private val result = mutableListOf<Int>()

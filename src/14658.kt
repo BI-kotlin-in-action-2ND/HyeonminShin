@@ -5,10 +5,9 @@ import kotlin.math.max
 data class Point(val x: Int, val y: Int)
 
 val stars = mutableListOf<Point>()
-var max = 1
 
 fun main() {
-    val (n, m, l, k) = readln().split(" ").map { it.toInt() }
+    val (_, _, l, k) = readln().split(" ").map { it.toInt() }
     repeat(k) {
         val (x, y) = readln().split(" ").map { it.toInt() }
         stars.add(Point(x, y))

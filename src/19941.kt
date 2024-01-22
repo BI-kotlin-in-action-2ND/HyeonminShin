@@ -1,7 +1,7 @@
 // https://www.acmicpc.net/problem/19941
 
 fun main() {
-    val (n, k) = readln().split(" ").map { it.toInt() }
+    val (_, k) = readln().split(" ").map { it.toInt() }
     val input = readln().toList()
 
     val hamburger = ArrayDeque<Int>()
