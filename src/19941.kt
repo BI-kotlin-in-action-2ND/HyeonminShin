@@ -8,10 +8,11 @@ fun main() {
     val person = ArrayDeque<Int>()
 
     input.forEachIndexed { index, c ->
-        if (c == 'H')
+        if (c == 'H') {
             hamburger.addLast(index)
-        else
+        } else {
             person.addLast(index)
+        }
     }
 
     var cnt = 0

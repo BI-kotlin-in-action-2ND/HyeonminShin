@@ -1,15 +1,16 @@
+// https://www.acmicpc.net/problem/1766
+
 import java.util.PriorityQueue
 
-/**
- * https://www.acmicpc.net/problem/1766
- */
-
 class TopologySort(n: Int) {
-    private val graph: MutableList<MutableList<Int>> = MutableList(n + 1) { mutableListOf() }
-    private val inDegree = MutableList(n + 1) { 0 }
+    private val graph: Array<MutableList<Int>> = Array(n + 1) { mutableListOf() }
+    private val inDegree = IntArray(n + 1)
     private val result = mutableListOf<Int>()
 
-    fun addEdge(start: Int, end: Int) {
+    fun addEdge(
+        start: Int,
+        end: Int,
+    ) {
         graph[start].add(end)
         inDegree[end]++
     }
