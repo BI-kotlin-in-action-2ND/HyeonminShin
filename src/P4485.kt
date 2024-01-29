@@ -11,8 +11,16 @@ var n = 0
 val dx = intArrayOf(-1, 1, 0, 0)
 val dy = intArrayOf(0, 0, -1, 1)
 
-lateinit var cave: Array<IntArray>
-lateinit var distance: Array<IntArray>
+val cave: Array<IntArray> by lazy {
+    Array(n) {
+        readln().split(" ").map { it.toInt() }.toIntArray()
+    }
+}
+val distance: Array<IntArray> by lazy {
+    Array(n) {
+        IntArray(n) { Int.MAX_VALUE }
+    }
+}
 
 data class State(val x: Int, val y: Int, val lose: Int) : Comparable<State> {
     override fun compareTo(other: State): Int = lose - other.lose
@@ -24,23 +32,9 @@ fun main() {
         n = readln().toInt()
         if (n == 0) break
 
-        solve()
+        bfs()
         println("Problem ${i++}: ${distance[n - 1][n - 1]}")
     }
-}
-
-fun solve() {
-    // init variables
-    cave =
-        Array(n) {
-            readln().split(" ").map { it.toInt() }.toIntArray()
-        }
-    distance =
-        Array(n) {
-            IntArray(n) { Int.MAX_VALUE }
-        }
-
-    bfs()
 }
 
 fun bfs() {
